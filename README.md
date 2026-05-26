@@ -1,15 +1,15 @@
 # Version Badge
 
-Create badges to display if a given version of a programming language, framework etc. is still supported
+Create badges to display if a given version of a programming language, framework, etc. is still supported
 or if it's EOL (end-of-life).
 
 ![php 7.1](https://img.shields.io/endpoint?url=https://version-badge.netlify.app/shields/php/7.1)
 ![nodejs 16](https://img.shields.io/endpoint?style=flat-square&url=https://version-badge.netlify.app/shields/nodejs/%253E%253D16)
 
 Supported products and version ranges can be seen in [versions.ts](src/versions.ts). If there are some versions
-missing or you don't find a programming language/framework you would like to use it with, PRs are welcome.
+missing, or you don't find a programming language/framework you would like to use it with, PRs are welcome.
 
-Version Badge exposes 3 endpoints that are run as Netlify Functions.
+Version Badge exposes three endpoints that are run as Netlify Functions.
 
 All endpoints require two parameters, `lang` and `version`.
 
@@ -25,9 +25,9 @@ Endpoint: `https://version-badge.netlify.app/shields/:lang/:version`
 Combine with `https://img.shields.io/endpoint` and provide version-badge endpoint as `url` query parameter.<br>
 Add `style` query parameter to use a different badge image style (see https://shields.io/#styles for available styles).
 
-More information about using Shields IO with custom endpoint: https://shields.io/endpoint
+More information about using Shields IO with a custom endpoint: https://shields.io/endpoint
 
-Shields IO supports caching badges and Version Badge currently sets the cache to 24h
+Shields IO supports caching badges, and Version Badge currently sets the cache to 24h
 (but you can override it with an URL parameter if needed, read more from the link above).
 
 Note, any characters that require URL encoding in the Version Badge URL need to be
@@ -50,7 +50,7 @@ Endpoint: `https://version-badge.netlify.app/badgen/:lang/:version`
 Combine with `https://badgen.net/https` prefix and without `https://`.
 Use `https://flat.badgen.net/https` prefix for flat badge image style.
 
-More information about using Badgen with custom endpoint: https://badgen.net/https
+More information about using Badgen with a custom endpoint: https://badgen.net/https
 
 Note, remember to URL encode any characters that require it, e.g. `>=`
 
@@ -64,8 +64,8 @@ Note, remember to URL encode any characters that require it, e.g. `>=`
 
 ## Version EOL
 
-Returns EOL informations as JSON. Can be used to create custom implementations of version EOL check.
-For example if you want to integrate it in a CI pipeline etc.
+Returns EOL information as JSON. Can be used to create custom implementations of version EOL check.
+For example, if you want to integrate it in a CI pipeline etc.
 
 Endpoint: https://version-badge.netlify.app/version-eol
 
