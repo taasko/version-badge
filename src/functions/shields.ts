@@ -2,6 +2,19 @@ import querystring from "querystring";
 import { APIGatewayEvent, ProxyResult } from "aws-lambda";
 import { getVersion, InvalidArgumentException } from "../get-version";
 
+function getColor(
+  isEol: boolean,
+  isNearEol: boolean,
+): "critical" | "yellow" | "green" {
+  if (isEol) {
+    return "critical";
+  }
+  if (isNearEol) {
+    return "yellow";
+  }
+  return "green";
+}
+
 export async function handler(event: APIGatewayEvent): Promise<ProxyResult> {
   try {
     const [versionRaw, lang] = event.path.split("/").reverse();
@@ -21,11 +34,7 @@ export async function handler(event: APIGatewayEvent): Promise<ProxyResult> {
         schemaVersion: 1,
         label: `${result.lang} ${result.version}`,
         message: result.eol,
-        color: result.isEol
-          ? "critical"
-          : result.isNearEol
-            ? "yellow"
-            : "success",
+        color: getColor(result.isEol, result.isNearEol),
         cacheSeconds: 60 * 60 * 24,
       }),
     };
