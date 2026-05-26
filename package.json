@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc && netlify-lambda build src/functions",
     "dev": "netlify-lambda serve src/functions",
+    "update-versions": "node scripts/update-versions-from-eol.js",
+    "update-versions:dry": "node scripts/update-versions-from-eol.js --dry-run",
     "ts-check": "tsc",
     "test": "jest"
   },
