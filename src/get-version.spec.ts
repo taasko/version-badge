@@ -5,8 +5,8 @@ import { versions } from "./versions";
 
 jest.mock("./versions", () => ({ versions: {} }));
 
-const nextYear = format(addMonths(new Date(), 12), 'yyyy-MM-dd');
-const nextMonth = format(addMonths(new Date(), 1), 'yyyy-MM-dd');
+const nextYear = format(addMonths(new Date(), 12), "yyyy-MM-dd");
+const nextMonth = format(addMonths(new Date(), 1), "yyyy-MM-dd");
 
 describe("getVersion", () => {
   beforeEach(() => {
@@ -22,14 +22,14 @@ describe("getVersion", () => {
     it("should throw when lang missing", () => {
       expect(() => getVersion()).toThrowWithMessage(
         InvalidArgumentException,
-        "Invalid lang"
+        "Invalid lang",
       );
     });
 
     it("should throw when lang is invalid", () => {
       expect(() => getVersion("x")).toThrowWithMessage(
         InvalidArgumentException,
-        "Invalid lang"
+        "Invalid lang",
       );
     });
   });
@@ -38,14 +38,14 @@ describe("getVersion", () => {
     it("should throw when version is missing", () => {
       expect(() => getVersion("foo")).toThrowWithMessage(
         InvalidArgumentException,
-        "Invalid version"
+        "Invalid version",
       );
     });
 
     it("should throw when version is invalid", () => {
       expect(() => getVersion("foo", "foo")).toThrowWithMessage(
         InvalidArgumentException,
-        "Invalid version"
+        "Invalid version",
       );
     });
   });
@@ -94,25 +94,26 @@ describe("getVersion", () => {
       ["v1.2.3", nextMonth, false],
       ["v2", nextYear, false],
       ["v3", "current", false],
-    ])('should return correct isEol for version "%s"', (version, expectedEol, expectedIsEol) => {
-      const result = getVersion("foo", version);
+    ])(
+      'should return correct isEol for version "%s"',
+      (version, expectedEol, expectedIsEol) => {
+        const result = getVersion("foo", version);
 
-      expect(result).not.toEqual(null);
-      expect(result!.eol).toEqual(expectedEol);
-      expect(result!.isEol).toEqual(expectedIsEol);
-    });
+        expect(result).not.toEqual(null);
+        expect(result!.eol).toEqual(expectedEol);
+        expect(result!.isEol).toEqual(expectedIsEol);
+      },
+    );
 
-    it.each([
-      ["v1.1"],
-      ["v2"],
-      ["v3"],
-    ])('should not be near eol when eol past or not within 6 months (version "%s")', version => {
-      const result = getVersion("foo", version);
+    it.each([["v1.1"], ["v2"], ["v3"]])(
+      'should not be near eol when eol past or not within 6 months (version "%s")',
+      (version) => {
+        const result = getVersion("foo", version);
 
-      expect(result).not.toEqual(null);
-      expect(result!.isNearEol).toEqual(false);
-    });
-
+        expect(result).not.toEqual(null);
+        expect(result!.isNearEol).toEqual(false);
+      },
+    );
 
     it("should be near eol when eol within 6 months", () => {
       const result = getVersion("foo", "v1.2.3");

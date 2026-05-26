@@ -13,8 +13,8 @@ Version Badge exposes 3 endpoints that are run as Netlify Functions.
 
 All endpoints require two parameters, `lang` and `version`.
 
-* `lang`: name of the language/framework (as written in [versions.ts](src/versions.ts))
-* `version`: [semver](https://www.npmjs.com/package/semver) compatible version identifier, for example `1.2.3`, `2.5`, `4.6.x`, `>=1.0.0`, `v2` etc.
+- `lang`: name of the language/framework (as written in [versions.ts](src/versions.ts))
+- `version`: [semver](https://www.npmjs.com/package/semver) compatible version identifier, for example `1.2.3`, `2.5`, `4.6.x`, `>=1.0.0`, `v2` etc.
 
 ## Shields IO
 
@@ -38,10 +38,8 @@ double encoded as the URL is also passed as URL parameter to Shields IO, e.g. `>
 `![php 7.1](https://img.shields.io/endpoint?url=https://version-badge.netlify.app/shields/php/7.1)`<br>
 ![php 7.1](https://img.shields.io/endpoint?url=https://version-badge.netlify.app/shields/php/7.1)
 
-
 `![nodejs 16](https://img.shields.io/endpoint?style=flat-square&url=https://version-badge.netlify.app/shields/nodejs/%253E%253D16)`<br>
 ![nodejs 16](https://img.shields.io/endpoint?style=flat-square&url=https://version-badge.netlify.app/shields/nodejs/%253E%253D16)
-
 
 ## Badgen
 
@@ -64,7 +62,6 @@ Note, remember to URL encode any characters that require it, e.g. `>=`
 `![nodejs 16](https://flat.badgen.net/https/version-badge.netlify.app/badgen/nodejs/%3E%3D16)`<br>
 ![nodejs 16](https://flat.badgen.net/https/version-badge.netlify.app/badgen/nodejs/%3E%3D16)
 
-
 ## Version EOL
 
 Returns EOL informations as JSON. Can be used to create custom implementations of version EOL check.
@@ -76,12 +73,12 @@ Response format:
 
 ```ts
 type VersionResult = {
-    lang: string;
-    version: string;
-    eol: DateString | "current"; // Date string as YYYY-MM-DD
-    isEol: boolean;
-    isNearEol: boolean; // true when EOL upcoming within 6 months
-}
+  lang: string;
+  version: string;
+  eol: DateString | "current"; // Date string as YYYY-MM-DD
+  isEol: boolean;
+  isNearEol: boolean; // true when EOL upcoming within 6 months
+};
 ```
 
 Can be called with either GET or POST request.
@@ -101,10 +98,10 @@ Response:
 
 ```json
 {
-    "version": "16.x",
-    "eol": "2023-09-11",
-    "lang": "nodejs",
-    "isEol": true,
-    "isNearEol": false
+  "version": "16.x",
+  "eol": "2023-09-11",
+  "lang": "nodejs",
+  "isEol": true,
+  "isNearEol": false
 }
 ```
