@@ -23,7 +23,7 @@ export const versions: Versions = {
   // https://www.php.net/supported-versions.php
   // https://endoflife.date/php
   php: [
-    { version: "7.4.x", eol: "2022-11-28" },
+    { version: "7.4.x", eol: "2022-10-28" },
     { version: "7.3.x", eol: "2021-12-06" },
     { version: "7.2.x", eol: "2020-11-30" },
     { version: "7.1.x", eol: "2019-12-01" },
