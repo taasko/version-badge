@@ -102,9 +102,9 @@ Response:
 ```json
 {
     "version": "16.x",
-    "eol": "2024-04-30",
+    "eol": "2023-09-11",
     "lang": "nodejs",
-    "isEol": false,
+    "isEol": true,
     "isNearEol": false
 }
 ```

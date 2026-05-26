@@ -11,14 +11,14 @@ export const versions: Versions = {
   // https://nodejs.org/en/about/releases/
   // https://endoflife.date/nodejs
   nodejs: [
-    { version: "16.x", eol: "2024-04-30" },
+    { version: "16.x", eol: "2023-09-11" },
     { version: "15.x", eol: "2021-06-01" },
     { version: "14.x", eol: "2023-04-30" },
     { version: "13.x", eol: "2020-06-01" },
     { version: "12.x", eol: "2022-04-30" },
     { version: "10.x", eol: "2021-04-30" },
     { version: "8.x", eol: "2019-12-31" },
-    { version: "6.x", eol: "2019-04-01" },
+    { version: "6.x", eol: "2019-04-30" },
   ],
   // https://www.php.net/supported-versions.php
   // https://endoflife.date/php
@@ -27,17 +27,17 @@ export const versions: Versions = {
     { version: "7.3.x", eol: "2021-12-06" },
     { version: "7.2.x", eol: "2020-11-30" },
     { version: "7.1.x", eol: "2019-12-01" },
-    { version: "7.0.x", eol: "2019-01-01" },
+    { version: "7.0.x", eol: "2019-01-10" },
     { version: "5.6.x", eol: "2018-12-31" },
   ],
   // https://www.python.org/downloads/
   // https://endoflife.date/python
   python: [
-    { version: "3.9.x", eol: "2025-10-05" },
-    { version: "3.8.x", eol: "2024-10-14" },
+    { version: "3.9.x", eol: "2025-10-31" },
+    { version: "3.8.x", eol: "2024-10-07" },
     { version: "3.7.x", eol: "2023-06-27" },
     { version: "3.6.x", eol: "2021-12-23" },
-    { version: "3.5.x", eol: "2020-09-13" },
+    { version: "3.5.x", eol: "2020-09-30" },
     { version: "2.7.x", eol: "2020-01-01" },
   ],
 
@@ -54,9 +54,9 @@ export const versions: Versions = {
   // https://docs.angularjs.org/misc/version-support-status
   angularjs: [
     { version: "1.8.x", eol: "2021-12-31" },
-    { version: "1.7.x", eol: "2020-06-04" },
-    { version: "1.6.x", eol: "2018-07-01" },
-    { version: "1.5.x", eol: "2017-01-13" },
+    { version: "1.7.x", eol: "2021-12-31" },
+    { version: "1.6.x", eol: "2021-12-31" },
+    { version: "1.5.x", eol: "2021-12-31" },
   ],
   // https://github.com/vuejs/roadmap#release-channels-and-lts
   vue: [
@@ -93,13 +93,13 @@ export const versions: Versions = {
   // https://expressjs.com/en/advanced/security-updates.html
   express: [
     { version: "4.x", eol: CURRENT },
-    { version: "3.x", eol: "2015-08-01" },
+    { version: "3.x", eol: "2015-07-05" },
   ],
 
   // https://wiki.centos.org/About/Product
   // https://wiki.centos.org/FAQ/General#What_is_the_support_.27.27end_of_life.27.27_for_each_CentOS_release.3F
   centos: [
-    { version: "8", eol: "2029-05-31" },
+    { version: "8", eol: "2021-12-31" },
     { version: "7", eol: "2024-06-30" },
     { version: "6", eol: "2020-11-30" },
     { version: "5", eol: "2017-03-31" },
@@ -110,7 +110,7 @@ export const versions: Versions = {
   // https://www.postgresql.org/support/versioning/
   postgresql: [
     { version: "13.x", eol: "2025-11-13" },
-    { version: "12.x", eol: "2024-11-14" },
+    { version: "12.x", eol: "2024-11-21" },
     { version: "11.x", eol: "2023-11-09" },
     { version: "10.x", eol: "2022-11-10" },
     { version: "9.6.x", eol: "2021-11-11" },
